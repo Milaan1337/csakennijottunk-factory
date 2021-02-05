@@ -60,6 +60,7 @@ public class FactoryInGameStage extends MyStage {
         buyButton2.setY(87);
         buyButton2.setX(-5);
         BuyButton3 buyButton3 = new BuyButton3(game);
+        buyButton3.setZIndex(91);
         buyButton3.setY(87);
         buyButton3.setX(-5);
         AdderUpgrade adderUpgrade = new AdderUpgrade(game);
