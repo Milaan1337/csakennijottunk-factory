@@ -20,11 +20,11 @@ import hu.csanyzeg.master.MyBaseClasses.Timers.Timer;
 import hu.csanyzeg.master.MyBaseClasses.UI.MyLabel;
 
 public class FactoryInGameStage extends MyStage {
-    AdderUpgrade adderUpgrade;
     MyLabel pointCounter;
     public int points = 0;
     public float ido = 1f;
-    public int pricegyar = 1000;
+    public int price = 1000;
+    public int factories = 0;
     public int priceupgrade = 500;
     public int getPoints(){
         return points;
@@ -43,6 +43,7 @@ public class FactoryInGameStage extends MyStage {
         //addActor(factoryActor);
         BuyButton buyButton = new BuyButton(game);
         addActor(buyButton);
+        AdderUpgrade adderUpgrade = new AdderUpgrade(game);
         addActor(adderUpgrade);
         //Actorok\\
 
@@ -82,18 +83,23 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                if (getPoints() >= pricegyar ){
-                    setPoints(getPoints() - pricegyar);
-                    addActor(factoryActor);
+                if (factories == 0) {
+
+                    if (getPoints() >= price) {
+                        setPoints(getPoints() - price);
+                        addActor(factoryActor);
+                        factories = factories + 1;
+                        buyButton.remove();
+                        System.out.println(factories);
+
+                    } else {
+                        System.out.println("Nincs elég pénz");
+                    }
+                    }
                 }
-                else{
-                    System.out.println("Nincs elég pénz");
-                }
-            }
-        });
+            });
 
         adderUpgrade.addListener(new ClickListener(){
-
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
