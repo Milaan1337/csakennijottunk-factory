@@ -5,22 +5,17 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
-import java.awt.Point;
-
 import hu.csanyzeg.master.MyBaseClasses.Game.MyGame;
 import hu.csanyzeg.master.MyBaseClasses.Scene2D.MyStage;
 import hu.csanyzeg.master.MyBaseClasses.Timers.MultiTickTimer;
 import hu.csanyzeg.master.MyBaseClasses.Timers.MultiTickTimerListener;
-import hu.csanyzeg.master.MyBaseClasses.Timers.OneTickTimer;
-import hu.csanyzeg.master.MyBaseClasses.Timers.OneTickTimerListener;
-import hu.csanyzeg.master.MyBaseClasses.Timers.PermanentTimer;
-import hu.csanyzeg.master.MyBaseClasses.Timers.PermanentTimerListener;
 import hu.csanyzeg.master.MyBaseClasses.Timers.TickTimer;
 import hu.csanyzeg.master.MyBaseClasses.Timers.TickTimerListener;
 import hu.csanyzeg.master.MyBaseClasses.Timers.Timer;
 import hu.csanyzeg.master.MyBaseClasses.UI.MyLabel;
 
 public class FactoryInGameStage extends MyStage {
+    ClickListener c1;
     public float time = 0;
     MyLabel pointCounter;
     public int points = 0;
@@ -29,6 +24,7 @@ public class FactoryInGameStage extends MyStage {
     public int factories = 0;
     public int priceupgrade = 500;
     public int pontado = 60;
+    public boolean pointupgraded = false;
     public int getPoints(){
         return points;
     }
@@ -39,7 +35,7 @@ public class FactoryInGameStage extends MyStage {
     }
 
     public FactoryInGameStage(MyGame game) {
-        super(new ExtendViewport(90,160), game);
+        super(new ExtendViewport(90, 160), game);
         //Actorok\\
         setCameraResetToCenterOfScreen();
         FactoryActor factoryActor = new FactoryActor(game);
@@ -68,26 +64,49 @@ public class FactoryInGameStage extends MyStage {
         //Labelek\\
 
         //Money timer\\
-        addTimer(new TickTimer(1,true,new TickTimerListener(){
-            @Override
-            public void onTick(Timer sender, float correction) {
-                super.onTick(sender, correction);
-                setPoints(getPoints() + 60);
-                System.out.println(getPoints());
+            addTimer(new TickTimer(1, true, new TickTimerListener() {
+                @Override
+                public void onTick(Timer sender, float correction) {
+                    if (pointupgraded=false)
+                    super.onTick(sender, correction);
+                    setPoints(getPoints() + 60);
+                    System.out.println(getPoints());
+                }
+
+                @Override
+                public void onStop(Timer sender) {
+                    super.onStop(sender);
+                }
+
+                @Override
+                public void onStart(Timer sender) {
+                    super.onStart(sender);
+                }
             }
 
-            @Override
-            public void onStop(Timer sender) {
-                super.onStop(sender);
+            ));
+
+            addTimer(new TickTimer(1, true, new TickTimerListener() {
+                @Override
+                public void onTick(Timer sender, float correction) {
+                    super.onTick(sender, correction);
+                    if (pointupgraded)
+                    setPoints(getPoints() + 120);
+                    System.out.println(getPoints());
+                }
+
+                @Override
+                public void onStop(Timer sender) {
+                    super.onStop(sender);
+                }
+
+                @Override
+                public void onStart(Timer sender) {
+                    super.onStart(sender);
+                }
             }
 
-            @Override
-            public void onStart(Timer sender) {
-                super.onStart(sender);
-            }
-        }
-
-        ));
+            ));
         //Money timer\\
         //Click listenerek\\
         buyButton.addListener(new ClickListener(){
@@ -116,6 +135,7 @@ public class FactoryInGameStage extends MyStage {
                 super.clicked(event, x, y);
                 if (getPoints() >= priceupgrade){
                     setPoints(getPoints() - priceupgrade);
+                    pointupgraded = true;
                     System.out.println("Köszi a vásárlást");
                 }
                 else {
@@ -163,7 +183,7 @@ public class FactoryInGameStage extends MyStage {
 
 
 
-        factoryActor.addListener(new ClickListener() {
+        factoryActor.addListener(c1 = new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
@@ -181,20 +201,6 @@ public class FactoryInGameStage extends MyStage {
 
                    }
                }));
-            }
-        });
-
-        adderUpgrade.addListener(new ClickListener(){
-
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                super.clicked(event, x, y);
-                if (getPoints() >=priceupgrade) {
-
-
-
-                }
-
             }
         });
 
