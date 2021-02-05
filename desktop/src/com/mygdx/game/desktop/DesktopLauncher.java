@@ -3,7 +3,7 @@ package com.mygdx.game.desktop;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
-import Flipper.FlipperGame;
+import csakennijottunk.FactoryGame;
 import hu.csanyzeg.master.Demos.DemoMyGame;
 
 public class DesktopLauncher {
@@ -11,6 +11,6 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.width=300;
 		config.height=600;
-		new LwjglApplication(new FlipperGame(false), config);
+		new LwjglApplication(new FactoryGame(false), config);
 	}
 }
