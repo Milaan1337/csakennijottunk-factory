@@ -340,13 +340,8 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                    if (getProducts() >= 1){
-                        setProducts(getProducts() - 1);
-                        setPoints(getPoints() + 10);
-                    }
-                    else{
-                        System.out.println("Nincs még 100terméked!");
-                    }
+                        setPoints(getPoints() + getProducts() * 10);
+                        setProducts(getProducts() - getProducts());
             }
         });
 
