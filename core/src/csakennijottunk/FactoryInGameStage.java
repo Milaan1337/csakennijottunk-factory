@@ -60,6 +60,7 @@ public class FactoryInGameStage extends MyStage {
         buyButton2.setY(87);
         buyButton2.setX(-5);
         BuyButton3 buyButton3 = new BuyButton3(game);
+        buyButton3.setZIndex(91);
         buyButton3.setY(87);
         buyButton3.setX(-5);
         AdderUpgrade adderUpgrade = new AdderUpgrade(game);
@@ -95,6 +96,12 @@ public class FactoryInGameStage extends MyStage {
         ShopBackground shopBackground = new ShopBackground(game);
         shopBackground.setX(-5);
         shopBackground.setY(40);
+        factoryActor.setX(-3);
+        factoryActor.setY(70);
+        factoryActor2.setY(70);
+        factoryActor3.setY(70);
+        factoryActor2.setX(27);
+        factoryActor3.setX(57);
 
         //Actorok\\
 
@@ -125,7 +132,7 @@ public class FactoryInGameStage extends MyStage {
                     super.onTick(sender, correction);
                     productCounter.setText("Money:" + getPoints() );
                     if (pointupgraded == false) {
-                        setPoints(getPoints() + 6);
+                        setPoints(getPoints() + 10000);
 
                     }
                     else{

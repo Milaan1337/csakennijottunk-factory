@@ -45,7 +45,7 @@ public class FactoryInfoStage extends MyStage {
         label.setPosition(5, 115);
         addActor(label);
 
-        label = new MyLabel(game, "products by clicking to the", labelStyle);
+        label = new MyLabel(game, "products by clicking on the", labelStyle);
         label.setFontScale(0.15f);
         label.setPosition(5, 110);
         addActor(label);
@@ -55,7 +55,7 @@ public class FactoryInfoStage extends MyStage {
         label.setPosition(5, 105);
         addActor(label);
 
-        label = new MyLabel(game, "Upgrades and warehouse", labelStyle);
+        label = new MyLabel(game, "Upgrades and factory", labelStyle);
         label.setFontScale(0.20f);
         label.setPosition(5, 95);
         addActor(label);
@@ -65,7 +65,7 @@ public class FactoryInfoStage extends MyStage {
         label.setPosition(5, 88);
         addActor(label);
 
-        label = new MyLabel(game, "You can buy warehouses and", labelStyle);
+        label = new MyLabel(game, "You can buy factories and", labelStyle);
         label.setFontScale(0.15f);
         label.setPosition(5, 75);
         addActor(label);
