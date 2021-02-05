@@ -42,12 +42,14 @@ public class FactoryInGameStage extends MyStage {
         FactoryActor factoryActor = new FactoryActor(game);
         //addActor(factoryActor);
         BuyButton buyButton = new BuyButton(game);
-        addActor(buyButton);
         buyButton.setPositionCenter(50);
         AdderUpgrade adderUpgrade = new AdderUpgrade(game);
-        addActor(adderUpgrade);
         PointAdderButton pointAdderButton = new PointAdderButton(game);
         addActor(pointAdderButton);
+        FactoryShop factoryShop = new FactoryShop(game);
+        addActor(factoryShop);
+        factoryShop.setX(40);
+        factoryShop.setY(40);
         //Actorok\\
 
         //Labelek\\
@@ -127,7 +129,16 @@ public class FactoryInGameStage extends MyStage {
             }
         });
 
+        factoryShop.addListener(new ClickListener(){
 
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                addActor(buyButton);
+                addActor(adderUpgrade);
+                factoryShop.remove();
+            }
+        });
 
         //Click listener\\
 
