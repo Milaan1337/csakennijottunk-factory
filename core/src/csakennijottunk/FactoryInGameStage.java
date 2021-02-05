@@ -51,6 +51,7 @@ public class FactoryInGameStage extends MyStage {
         //Actorok\\
         setCameraResetToCenterOfScreen();
         FactoryActor factoryActor = new FactoryActor(game);
+        addActor(new InGameBackground(game, 0, 0));
         //addActor(factoryActor);
         BuyButton buyButton = new BuyButton(game);
         BuyButton2 buyButton2 = new BuyButton2(game);
