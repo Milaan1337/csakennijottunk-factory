@@ -35,6 +35,14 @@ public class FactoryInGameStage extends MyStage {
         pointCounter.setText(getPoints());
     }
 
+    public int getProducts(){
+        return products;
+    }
+
+    public void setProducts(int products){
+        this.products = products;
+    }
+
     public FactoryInGameStage(MyGame game) {
         super(new ExtendViewport(90, 160), game);
         //Actorok\\
@@ -136,7 +144,7 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                    setPoints(getPoints() + 5);
+                    setProducts(getProducts() + 5);
             }
         });
 
@@ -148,7 +156,9 @@ public class FactoryInGameStage extends MyStage {
                 if (factories == 0) {
                     addActor(buyButton);
                 }
-                addActor(adderUpgrade);
+                if (pointupgraded ==false) {
+                    addActor(adderUpgrade);
+                }
                 addActor(shopExit);
                 factoryShop.remove();
             }
@@ -166,29 +176,6 @@ public class FactoryInGameStage extends MyStage {
             }
         });
 
-
-
-        factoryActor.addListener(c1 = new ClickListener() {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                super.clicked(event, x, y);
-               addTimer(new MultiTickTimer(1, pontado, new MultiTickTimerListener(){
-                   @Override
-                   public void onTick(MultiTickTimer sender, float correction, int count) {
-                       super.onTick(sender, correction, count);
-                       time = time + 1;
-                       Gdx.app.log("FACTORY ACTOR", String.valueOf(6 - time));
-                   }
-
-                   @Override
-                   public void onStop(MultiTickTimer sender) {
-                       super.onStop(sender);
-
-
-                   }
-               }));
-            }
-        });
 
         //Click listener\\
 
