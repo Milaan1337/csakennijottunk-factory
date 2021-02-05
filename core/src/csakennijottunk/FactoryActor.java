@@ -7,6 +7,6 @@ public class FactoryActor extends OneSpriteStaticActor {
     public FactoryActor(MyGame game) {
         super(game, "Factory/factory.png");
         this.setSize(30,30);
-        this.setPositionCenter(50);
+        this.setPosition(30,70);
     }
 }

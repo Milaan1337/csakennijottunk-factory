@@ -1,5 +1,7 @@
 package csakennijottunk;
 
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
 import java.awt.Point;
@@ -22,6 +24,7 @@ public class FactoryInGameStage extends MyStage {
     AdderUpgrade adderUpgrade;
     public int points = 0;
     public float ido = 1f;
+    public int price = 1000;
     public int getPoints(){
         return points;
     }
@@ -33,10 +36,14 @@ public class FactoryInGameStage extends MyStage {
 
     public FactoryInGameStage(MyGame game) {
         super(new ExtendViewport(90,160), game);
-
+        //Actorok\\
+        setCameraResetToLeftBottomOfScreen();
         FactoryActor factoryActor = new FactoryActor(game);
-        addActor(factoryActor);
+        //addActor(factoryActor);
+        BuyButton buyButton = new BuyButton(game);
+        addActor(buyButton);
         addActor(new AdderUpgrade(game));
+        //Actorok\\
 
         //Labelek\\
         pointCounter = new MyLabel(game, "Life: ", new PointCounter(game));
@@ -69,6 +76,20 @@ public class FactoryInGameStage extends MyStage {
 
         ));
         //Money timer\\
+        //Click listenerek\\
+        buyButton.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                if (getPoints() >= price ){
+                    setPoints(getPoints() - price);
+                    addActor(factoryActor);
+                }
+                else{
+                    System.out.println("Nincs elég pénz");
+                }
+            }
+        });
 
 
     }
