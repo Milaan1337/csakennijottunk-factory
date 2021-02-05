@@ -12,4 +12,9 @@ public class FactoryGame  extends MyGame {
         super.create();
         setScreen(new FactoryMenuScreen(this));
     }
+
+    @Override
+    public void setScreen(FactoryCreditStage factoryCreditStage) {
+
+    }
 }
