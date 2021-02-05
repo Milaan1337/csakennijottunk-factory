@@ -15,6 +15,7 @@ ClickListener c1;
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
+                game.getMyAssetManager().getSound("Factory/onclick.mp3").play();
                 game.setScreen(new FactoryInGameScreen(game));
             }
         });
