@@ -78,6 +78,9 @@ public class FactoryInGameStage extends MyStage {
         addActor(coinIcon);
         coinIcon.setY(100);
         coinIcon.setX(0);
+        ProductIcon productIcon = new ProductIcon(game);
+        addActor(productIcon);
+        productIcon.setPositionCenter(120);
         //Actorok\\
 
         //Labelek\\
