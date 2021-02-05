@@ -7,6 +7,7 @@ public class FactoryWarehouse extends OneSpriteStaticActor {
     FactoryWarehouse(MyGame game) {
         super(game, "Factory/warehouse.jpg");
         this.setSize(50, 50);
+        this.setPosition(50,20);
 
     }
 }

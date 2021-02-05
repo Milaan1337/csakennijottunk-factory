@@ -5,7 +5,7 @@ import hu.csanyzeg.master.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
 public class PointAdderButton extends OneSpriteStaticActor {
     public PointAdderButton(MyGame game) {
-        super(game, "badlogic.jpg");
+        super(game, "Factory/steal_button.png");
         this.setSize(30,30);
     }
 }

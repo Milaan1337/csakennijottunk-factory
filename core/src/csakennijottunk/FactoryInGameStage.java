@@ -65,6 +65,7 @@ public class FactoryInGameStage extends MyStage {
         shopExit.setY(40);
         FactoryWarehouse factoryWarehouse = new FactoryWarehouse(game);
         addActor(factoryWarehouse);
+        factoryWarehouse.setPositionCenter(50);
         //Actorok\\
 
         //Labelek\\
@@ -114,16 +115,32 @@ public class FactoryInGameStage extends MyStage {
 
             ));
 
-        //Money timer\\
+        //Product timer\\
         addTimer(new TickTimer(1, true, new TickTimerListener() {
             @Override
             public void onTick(Timer sender, float correction) {
                 super.onTick(sender, correction);
                 productCounter.setText("" + getProducts());
             }
-        }
+        }));
 
-        ));
+        addTimer(new TickTimer(1, true, new TickTimerListener() {
+            @Override
+            public void onTick(Timer sender, float correction) {
+                super.onTick(sender, correction);
+                if (factories==1){
+                    setProducts(getProducts() + 1);
+                }
+
+                if (factories==2){
+                    setProducts(getProducts() + 3);
+                }
+
+                if (factories==3){
+                    setProducts(getProducts() + 6);
+                }
+            }
+        }));
 
         //Lomi timer\\
 
