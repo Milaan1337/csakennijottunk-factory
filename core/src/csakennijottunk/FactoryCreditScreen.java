@@ -16,6 +16,7 @@ public class FactoryCreditScreen extends MyScreen {
 
     @Override
     public AssetList getAssetList() { addStage(new FactoryCreditStage(game), 0, true);
+        ((FactoryGame)game).setMusic(FactoryGame.MusicType.GAME);
         return null;
     }
 }

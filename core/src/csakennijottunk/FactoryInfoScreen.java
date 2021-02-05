@@ -8,7 +8,9 @@ public class FactoryInfoScreen extends MyScreen {
     public FactoryInfoScreen(MyGame game) {super(game);}
 
     @Override
-    protected void afterAssetsLoaded() { addStage(new FactoryInfoStage(game), 1, true);
+    protected void afterAssetsLoaded() {
+        addStage(new FactoryInfoStage(game), 1, true);
+        ((FactoryGame)game).setMusic(FactoryGame.MusicType.GAME);
 
     }
 

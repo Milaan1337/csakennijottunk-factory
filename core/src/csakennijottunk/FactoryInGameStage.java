@@ -21,9 +21,9 @@ public class FactoryInGameStage extends MyStage {
     MyLabel productCounter;
     public int points = 0;
     public int ido = 1;
-    public int price = 1000;
+    public int price = 500;
     public int factories = 0;
-    public int priceupgrade = 500;
+    public int priceupgrade = 100;
     public int pontado = 6;
     public boolean pointupgraded = false;
     public int products = 0;
@@ -47,6 +47,7 @@ public class FactoryInGameStage extends MyStage {
 
     public FactoryInGameStage(MyGame game) {
         super(new ExtendViewport(90, 160), game);
+        addBackButtonScreenBackByStackPopListener();
         //Actorok\\
         setCameraResetToCenterOfScreen();
         FactoryActor factoryActor = new FactoryActor(game);
@@ -202,8 +203,8 @@ public class FactoryInGameStage extends MyStage {
                 super.clicked(event, x, y);
                 if (factories == 1) {
 
-                    if (getPoints() >= 3000) {
-                        setPoints(getPoints() - 3000);
+                    if (getPoints() >= 1500) {
+                        setPoints(getPoints() - 1500);
                         addActor(factoryActor2);
                         factories = factories + 1;
                         buyButton2.remove();
@@ -222,8 +223,8 @@ public class FactoryInGameStage extends MyStage {
                 super.clicked(event, x, y);
                 if (factories == 2) {
 
-                    if (getPoints() >= 6000) {
-                        setPoints(getPoints() - 6000);
+                    if (getPoints() >= 3000) {
+                        setPoints(getPoints() - 3000);
                         addActor(factoryActor3);
                         factories = factories + 1;
                         buyButton3.remove();
@@ -317,6 +318,19 @@ public class FactoryInGameStage extends MyStage {
 
         //Click listener\\
 
+        factoryWarehouse.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                    if (getProducts() >= 100){
+                        setProducts(getProducts() - 10);
+                        setPoints(getPoints() + 1000);
+                    }
+                    else{
+                        System.out.println("Nincs még 100terméked!");
+                    }
+            }
+        });
 
 
 
