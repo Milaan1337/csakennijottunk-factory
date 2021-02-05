@@ -28,6 +28,7 @@ public class FactoryInGameStage extends MyStage {
     public int price = 1000;
     public int factories = 0;
     public int priceupgrade = 500;
+    public int pontado = 60;
     public int getPoints(){
         return points;
     }
@@ -166,7 +167,7 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-               addTimer(new MultiTickTimer(1, 60, new MultiTickTimerListener(){
+               addTimer(new MultiTickTimer(1, pontado, new MultiTickTimerListener(){
                    @Override
                    public void onTick(MultiTickTimer sender, float correction, int count) {
                        super.onTick(sender, correction, count);
@@ -180,6 +181,20 @@ public class FactoryInGameStage extends MyStage {
 
                    }
                }));
+            }
+        });
+
+        adderUpgrade.addListener(new ClickListener(){
+
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                if (getPoints() >=priceupgrade) {
+
+
+
+                }
+
             }
         });
 
