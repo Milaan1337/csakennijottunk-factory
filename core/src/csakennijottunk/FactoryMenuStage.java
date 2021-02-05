@@ -19,7 +19,7 @@ public class FactoryMenuStage extends MyStage {
         addBackButtonScreenBackByStackPopListener();
 
         addActor(new MenuBackgroundActor(game, 0, 0));
-        addActor(new SmokeActor(game));
+        //addActor(new SmokeActor(game));
 
         startButton = new StartButton(game);
         startButton.setPosition(35, 93 );

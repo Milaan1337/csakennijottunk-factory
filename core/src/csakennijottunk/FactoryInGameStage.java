@@ -127,12 +127,12 @@ public class FactoryInGameStage extends MyStage {
         productCounter.setAlignment(2);
 
 
-        MyLabel timerLabel = new TimerLabel(game,"100 gold");
-        addActor(timerLabel);
-        timerLabel.setFontScale(0.3f);
-        timerLabel.setPosition(10,10);
-        timerLabel.setSize(50,17);
-        timerLabel.setAlignment(2);
+        //MyLabel timerLabel = new TimerLabel(game,"100 gold");
+        //addActor(timerLabel);
+       // timerLabel.setFontScale(0.3f);
+       // timerLabel.setPosition(10,10);
+        //timerLabel.setSize(50,17);
+        //timerLabel.setAlignment(2);
 
 
         //Labelek\\
@@ -303,11 +303,12 @@ public class FactoryInGameStage extends MyStage {
                     Label.LabelStyle labelStyle = new Label.LabelStyle();
                     labelStyle.font = game.getMyAssetManager().getFont("Factory/font-factory.ttf");
 
-                    MyLabel label = new MyLabel(game, "1000", labelStyle);
-                    label.setFontScale(0.2f);
-                    label.setPosition(35, 85);
-                    addActor(label);
-                    label.setZIndex(90);
+                    //MyLabel label = new MyLabel(game, "1000", labelStyle);
+                   // label.setFontScale(0.2f);
+                    //label.setPosition(35, 85);
+                    //label.setWidth(1);
+                    //addActor(label);
+                    //label.setZIndex(95);
                     addActor(buyButton);
 
 
@@ -352,6 +353,7 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
+
                 buyButton.remove();
                 adderUpgrade.remove();
                 shopExit.remove();

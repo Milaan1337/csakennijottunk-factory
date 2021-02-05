@@ -32,7 +32,7 @@ public class FactoryGame  extends MyGame {
                     music.setVolume(0.5f);
                     break;
                 case GAME:
-                    music = getMyAssetManager().getMusic("Flipper/ingamemusic.mp3");
+                    music = getMyAssetManager().getMusic("Factory/ingame.mp3");
                     music.setLooping(true);
                     music.play();
                     music.setVolume(0.5f);
