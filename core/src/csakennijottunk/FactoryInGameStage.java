@@ -23,8 +23,9 @@ public class FactoryInGameStage extends MyStage {
     public int price = 1000;
     public int factories = 0;
     public int priceupgrade = 500;
-    public int pontado = 60;
+    public int pontado = 6;
     public boolean pointupgraded = false;
+    public int products = 0;
     public int getPoints(){
         return points;
     }
@@ -119,6 +120,7 @@ public class FactoryInGameStage extends MyStage {
                 if (getPoints() >= priceupgrade){
                     setPoints(getPoints() - priceupgrade);
                     pointupgraded = true;
+                    adderUpgrade.remove();
                     System.out.println("Köszi a vásárlást");
                 }
                 else {
@@ -134,7 +136,7 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                setPoints(getPoints() + 5);
+                    setPoints(getPoints() + 5);
             }
         });
 
@@ -175,12 +177,13 @@ public class FactoryInGameStage extends MyStage {
                    public void onTick(MultiTickTimer sender, float correction, int count) {
                        super.onTick(sender, correction, count);
                        time = time + 1;
-                       Gdx.app.log("FACTORY ACTOR", String.valueOf(60 - time));
+                       Gdx.app.log("FACTORY ACTOR", String.valueOf(6 - time));
                    }
 
                    @Override
                    public void onStop(MultiTickTimer sender) {
                        super.onStop(sender);
+
 
                    }
                }));
