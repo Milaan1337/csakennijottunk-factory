@@ -26,6 +26,7 @@ public class FactoryInGameStage extends MyStage {
     public int pontado = 6;
     public boolean pointupgraded = false;
     public int products = 0;
+    public int maxproduct = 200;
     public int getPoints(){
         return points;
     }
@@ -70,6 +71,8 @@ public class FactoryInGameStage extends MyStage {
         pointCounter.setPositionCenter(80);
         pointCounter.setFontScale(0.3f);
         pointCounter.setAlignment(2);
+
+
         //Labelek\\
 
         //Money timer\\
