@@ -62,6 +62,8 @@ public class FactoryInGameStage extends MyStage {
         ShopExit shopExit = new ShopExit(game);
         shopExit.setX(40);
         shopExit.setY(40);
+        FactoryWarehouse factoryWarehouse = new FactoryWarehouse(game);
+        addActor(factoryWarehouse);
         //Actorok\\
 
         //Labelek\\
