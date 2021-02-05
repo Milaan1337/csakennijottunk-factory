@@ -50,6 +50,9 @@ public class FactoryInGameStage extends MyStage {
         addActor(factoryShop);
         factoryShop.setX(40);
         factoryShop.setY(40);
+        ShopExit shopExit = new ShopExit(game);
+        shopExit.setX(40);
+        shopExit.setY(40);
         //Actorok\\
 
         //Labelek\\
@@ -136,7 +139,20 @@ public class FactoryInGameStage extends MyStage {
                 super.clicked(event, x, y);
                 addActor(buyButton);
                 addActor(adderUpgrade);
+                addActor(shopExit);
                 factoryShop.remove();
+            }
+        });
+
+        shopExit.addListener(new ClickListener(){
+
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                buyButton.remove();
+                adderUpgrade.remove();
+                shopExit.remove();
+                addActor(factoryShop);
             }
         });
 
