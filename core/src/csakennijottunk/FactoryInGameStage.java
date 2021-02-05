@@ -317,25 +317,11 @@ public class FactoryInGameStage extends MyStage {
 
                 if (factories == 1) {
                     addActor(buyButton2);
-                    Label.LabelStyle labelStyle = new Label.LabelStyle();
-                    labelStyle.font = game.getMyAssetManager().getFont("Factory/font-factory.ttf");
-
-                    MyLabel label = new MyLabel(game, "3000:", labelStyle);
-                    label.setFontScale(0.2f);
-                    label.setPosition(20, 135);
-                    addActor(label);
                     buyButton2.setZIndex(95);
                 }
 
                 if (factories == 2) {
                     addActor(buyButton3);
-                    Label.LabelStyle labelStyle = new Label.LabelStyle();
-                    labelStyle.font = game.getMyAssetManager().getFont("Factory/font-factory.ttf");
-
-                    MyLabel label = new MyLabel(game, "6000:", labelStyle);
-                    label.setFontScale(0.2f);
-                    label.setPosition(10, 120);
-                    addActor(label);
                     buyButton3.setZIndex(94);
                 }
                 if (pointupgraded ==false) {
