@@ -349,7 +349,7 @@ public class FactoryInGameStage extends MyStage {
             }
         });
 
-
+        addActor(new SmokeActor(game));
 
     }
 }
