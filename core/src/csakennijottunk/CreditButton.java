@@ -14,7 +14,7 @@ public class CreditButton extends OneSpriteStaticActor {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                game.setScreen(new FactoryCreditStage(game));
+                game.setScreen(new FactoryCreditScreen(game));
             }
         });
     }
