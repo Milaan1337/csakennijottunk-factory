@@ -22,6 +22,7 @@ public class ExitButton extends OneSpriteStaticActor {
                     @Override
                     public void onTick(OneTickTimer sender, float correction) {
                         super.onTick(sender, correction);
+                        game.getMyAssetManager().getSound("Factory/onclick.mp3").play();
                         game.setScreenBackByStackPop();
                     }
 

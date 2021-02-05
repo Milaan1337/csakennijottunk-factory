@@ -91,7 +91,7 @@ public class FactoryInfoStage extends MyStage {
         addActor(label);
 
         backButton = new BackButton(game);
-        backButton.setSize(15, 15);
+        backButton.setSize(30, 30);
         backButton.setPosition(0, 0);
         addActor(backButton);
 

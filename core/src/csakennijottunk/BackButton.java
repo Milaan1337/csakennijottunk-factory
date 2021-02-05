@@ -10,11 +10,12 @@ public class BackButton extends OneSpriteStaticActor {
     ClickListener c1;
 
     public BackButton(MyGame game) {
-        super(game, "badlogic.jpg");
+        super(game, "Factory/backbutton.png");
         this.addListener(c1 = new ClickListener() {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
+                        game.getMyAssetManager().getSound("Factory/onclick.mp3").play();
                         game.setScreenBackByStackPop();
                     }
                 }
