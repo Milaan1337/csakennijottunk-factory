@@ -94,6 +94,12 @@ public class FactoryInGameStage extends MyStage {
         ShopBackground shopBackground = new ShopBackground(game);
         shopBackground.setX(-5);
         shopBackground.setY(40);
+        factoryActor.setX(-3);
+        factoryActor.setY(70);
+        factoryActor2.setY(70);
+        factoryActor3.setY(70);
+        factoryActor2.setX(27);
+        factoryActor3.setX(57);
 
         //Actorok\\
 
@@ -124,7 +130,7 @@ public class FactoryInGameStage extends MyStage {
                     super.onTick(sender, correction);
                     productCounter.setText("Money:" + getPoints() );
                     if (pointupgraded == false) {
-                        setPoints(getPoints() + 6);
+                        setPoints(getPoints() + 10000);
 
                     }
                     else{
