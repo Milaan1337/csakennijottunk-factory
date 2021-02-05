@@ -11,7 +11,7 @@ public class FactoryMenuScreen extends MyScreen {
 
     @Override
     protected void afterAssetsLoaded() {
-        addStage(new FactoryMenuStage(game),1,true);
+        addStage(new FactoryMenuStage(game),0,true);
     }
 
     @Override

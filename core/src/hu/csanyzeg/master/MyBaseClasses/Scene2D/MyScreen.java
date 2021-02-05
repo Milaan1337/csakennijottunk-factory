@@ -38,7 +38,9 @@ abstract public class MyScreen implements Screen, InitableInterface, AssetCollec
 
     public MyScreen(MyGame game) {
         this.game = game;
-        game.getMyAssetManager().changeAssets(this.getAssetList());
+        if (this.getAssetList()!=null) {
+            game.getMyAssetManager().changeAssets(this.getAssetList());
+        }
         if (game.getLoadingStage()!= null) {
             game.getLoadingStage().show();
         }
