@@ -88,7 +88,8 @@ public class FactoryInGameStage extends MyStage {
         coinIcon.setX(0);
         ProductIcon productIcon = new ProductIcon(game);
         addActor(productIcon);
-        productIcon.setPositionCenter(150);
+        productIcon.setX(-6);
+        productIcon.setY(120);
         ShopBackground shopBackground = new ShopBackground(game);
         shopBackground.setX(-5);
         shopBackground.setY(40);
@@ -99,14 +100,16 @@ public class FactoryInGameStage extends MyStage {
         pointCounter = new MyLabel(game, "" + getPoints(), new PointCounter(game));
         addActor(pointCounter);
         pointCounter.setFontScale(0.3f);
-        pointCounter.setPositionCenter(150);
+        pointCounter.setY(117);
+        pointCounter.setX(20);
         pointCounter.setFontScale(0.3f);
         pointCounter.setAlignment(2);
 
         productCounter = new MyLabel(game, "" + getProducts(), new ProductCounter(game));
         addActor(productCounter);
         productCounter.setFontScale(0.3f);
-        productCounter.setPositionCenter(140);
+        productCounter.setY(90);
+        productCounter.setX(20);
         productCounter.setFontScale(0.3f);
         productCounter.setAlignment(2);
 
