@@ -336,7 +336,7 @@ public class FactoryInGameStage extends MyStage {
                     label.setFontScale(0.2f);
                     label.setPosition(10, 120);
                     addActor(label);
-                    buyButton.setZIndex(94);
+                    buyButton3.setZIndex(94);
                 }
                 if (pointupgraded ==false) {
                     addActor(adderUpgrade);
