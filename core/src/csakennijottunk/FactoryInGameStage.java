@@ -73,7 +73,7 @@ public class FactoryInGameStage extends MyStage {
         PointAdderButton pointAdderButton = new PointAdderButton(game);
         addActor(pointAdderButton);
         pointAdderButton.setX(-5);
-        pointAdderButton.setY(-20);
+        pointAdderButton.setY(-15);
         FactoryShop factoryShop = new FactoryShop(game);
         addActor(factoryShop);
         factoryShop.setX(50);
@@ -83,7 +83,7 @@ public class FactoryInGameStage extends MyStage {
         shopExit.setY(84);
         FactoryWarehouse factoryWarehouse = new FactoryWarehouse(game);
         addActor(factoryWarehouse);
-        factoryWarehouse.setY(-17.5f);
+        factoryWarehouse.setY(-15.5f);
         factoryWarehouse.setX(55);
         FactoryActor2 factoryActor2 = new FactoryActor2(game);
         factoryActor2.setPositionCenter(90);
