@@ -67,9 +67,13 @@ public class FactoryInGameStage extends MyStage {
             addTimer(new TickTimer(1, true, new TickTimerListener() {
                 @Override
                 public void onTick(Timer sender, float correction) {
-                    if (pointupgraded=false)
                     super.onTick(sender, correction);
-                    setPoints(getPoints() + 60);
+                    if (pointupgraded == false) {
+                        setPoints(getPoints() + 60);
+                    }
+                    else{
+                        setPoints(getPoints() + 120);
+                    }
                     System.out.println(getPoints());
                 }
 
@@ -86,27 +90,6 @@ public class FactoryInGameStage extends MyStage {
 
             ));
 
-            addTimer(new TickTimer(1, true, new TickTimerListener() {
-                @Override
-                public void onTick(Timer sender, float correction) {
-                    super.onTick(sender, correction);
-                    if (pointupgraded)
-                    setPoints(getPoints() + 120);
-                    System.out.println(getPoints());
-                }
-
-                @Override
-                public void onStop(Timer sender) {
-                    super.onStop(sender);
-                }
-
-                @Override
-                public void onStart(Timer sender) {
-                    super.onStart(sender);
-                }
-            }
-
-            ));
         //Money timer\\
         //Click listenerek\\
         buyButton.addListener(new ClickListener(){
