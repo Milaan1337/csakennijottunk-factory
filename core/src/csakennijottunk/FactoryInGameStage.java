@@ -53,48 +53,60 @@ public class FactoryInGameStage extends MyStage {
         //addActor(factoryActor);
         BuyButton buyButton = new BuyButton(game);
         BuyButton2 buyButton2 = new BuyButton2(game);
-        buyButton2.setPositionCenter(50);
-        buyButton.setPositionCenter(50);
+        buyButton.setY(87);
+        buyButton.setX(-5);
+        buyButton2.setY(87);
+        buyButton2.setX(-5);
         BuyButton3 buyButton3 = new BuyButton3(game);
-        buyButton3.setPositionCenter(50);
+        buyButton3.setY(87);
+        buyButton3.setX(-5);
         AdderUpgrade adderUpgrade = new AdderUpgrade(game);
+        adderUpgrade.setX(-5);
+        adderUpgrade.setY(65);
         PointAdderButton pointAdderButton = new PointAdderButton(game);
         addActor(pointAdderButton);
+        pointAdderButton.setX(-5);
+        pointAdderButton.setY(-20);
         FactoryShop factoryShop = new FactoryShop(game);
         addActor(factoryShop);
-        factoryShop.setX(40);
-        factoryShop.setY(40);
+        factoryShop.setX(50);
+        factoryShop.setY(35);
         ShopExit shopExit = new ShopExit(game);
-        shopExit.setX(40);
-        shopExit.setY(40);
+        shopExit.setX(56);
+        shopExit.setY(84);
         FactoryWarehouse factoryWarehouse = new FactoryWarehouse(game);
         addActor(factoryWarehouse);
-        factoryWarehouse.setPositionCenter(50);
+        factoryWarehouse.setY(-17.5f);
+        factoryWarehouse.setX(55);
         FactoryActor2 factoryActor2 = new FactoryActor2(game);
         factoryActor2.setPositionCenter(90);
         FactoryActor3 factoryActor3 = new FactoryActor3(game);
         factoryActor3. setPositionCenter(150);
         CoinIcon coinIcon = new CoinIcon(game);
         addActor(coinIcon);
-        coinIcon.setY(100);
+        coinIcon.setY(150);
         coinIcon.setX(0);
         ProductIcon productIcon = new ProductIcon(game);
         addActor(productIcon);
-        productIcon.setPositionCenter(120);
+        productIcon.setPositionCenter(150);
+        ShopBackground shopBackground = new ShopBackground(game);
+        shopBackground.setX(-5);
+        shopBackground.setY(40);
+
         //Actorok\\
 
         //Labelek\\
         pointCounter = new MyLabel(game, "" + getPoints(), new PointCounter(game));
         addActor(pointCounter);
         pointCounter.setFontScale(0.3f);
-        pointCounter.setPositionCenter(80);
+        pointCounter.setPositionCenter(150);
         pointCounter.setFontScale(0.3f);
         pointCounter.setAlignment(2);
 
         productCounter = new MyLabel(game, "" + getProducts(), new ProductCounter(game));
         addActor(productCounter);
         productCounter.setFontScale(0.3f);
-        productCounter.setPositionCenter(70);
+        productCounter.setPositionCenter(140);
         productCounter.setFontScale(0.3f);
         productCounter.setAlignment(2);
 
@@ -258,6 +270,9 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
+
+                addActor(shopBackground);
+
                 if (factories == 0) {
                     addActor(buyButton);
                 }
@@ -286,6 +301,7 @@ public class FactoryInGameStage extends MyStage {
                 adderUpgrade.remove();
                 shopExit.remove();
                 addActor(factoryShop);
+                shopBackground.remove();
             }
         });
 
