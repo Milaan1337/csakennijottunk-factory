@@ -91,7 +91,7 @@ public class FactoryInGameStage extends MyStage {
         factoryActor3. setPositionCenter(150);
         CoinIcon coinIcon = new CoinIcon(game);
         addActor(coinIcon);
-        coinIcon.setY(150);
+        coinIcon.setY(140);
         coinIcon.setX(0);
         ProductIcon productIcon = new ProductIcon(game);
         addActor(productIcon);
@@ -113,7 +113,7 @@ public class FactoryInGameStage extends MyStage {
         pointCounter = new MyLabel(game, "" + getPoints(), new PointCounter(game));
         addActor(pointCounter);
         pointCounter.setFontScale(0.3f);
-        pointCounter.setY(117);
+        pointCounter.setY(107);
         pointCounter.setX(20);
         pointCounter.setFontScale(0.3f);
         pointCounter.setAlignment(2);
