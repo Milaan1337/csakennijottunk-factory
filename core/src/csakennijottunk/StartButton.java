@@ -10,7 +10,7 @@ public class StartButton extends OneSpriteStaticActor {
 ClickListener c1;
 
     public StartButton(MyGame game) {
-        super(game, "badlogic.jpg");
+        super(game, "Factory/start.jpg");
         this.addListener(c1 = new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {

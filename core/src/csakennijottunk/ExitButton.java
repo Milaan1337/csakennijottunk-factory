@@ -13,7 +13,7 @@ public class ExitButton extends OneSpriteStaticActor {
     ClickListener c1;
 
     public ExitButton(MyGame game) {
-        super(game, "badlogic.jpg");
+        super(game, "Factory/exitbutton.jpg");
         this.addListener(c1 = new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {

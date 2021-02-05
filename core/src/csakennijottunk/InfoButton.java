@@ -10,7 +10,7 @@ public class InfoButton extends OneSpriteStaticActor {
     ClickListener c1;
 
     public InfoButton(MyGame game) {
-        super(game, "badlogic.jpg");
+        super(game, "Factory/infobutton.jpg");
         this.addListener( c1 = new ClickListener() {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
