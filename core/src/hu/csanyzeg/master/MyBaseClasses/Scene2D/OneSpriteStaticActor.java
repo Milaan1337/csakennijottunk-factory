@@ -15,6 +15,7 @@ public class OneSpriteStaticActor extends OneSpriteActor {
         super(game, new Sprite(game.getMyAssetManager().getTexture(hash)));
     }
 
+
     public MyGame getGame() {
         return game;
     }

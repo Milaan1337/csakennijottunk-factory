@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
 
+import csakennijottunk.FactoryCreditStage;
 import hu.csanyzeg.master.MyBaseClasses.Assets.AssetList;
 import hu.csanyzeg.master.MyBaseClasses.Assets.LoadingListener;
 import hu.csanyzeg.master.MyBaseClasses.Assets.LoadingStage;
@@ -51,6 +52,8 @@ abstract public class MyGame extends Game {
     public void setScreenBackByStackPop(){
         setScreenBackByStackPop(null);
     }
+
+    public abstract void setScreen(FactoryCreditStage factoryCreditStage);
 
     public interface ScreenInit{
         public void init(MyScreen scr);
