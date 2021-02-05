@@ -18,6 +18,7 @@ public class FactoryInGameStage extends MyStage {
     ClickListener c1;
     public float time = 0;
     MyLabel pointCounter;
+    MyLabel productCounter;
     public int points = 0;
     public int ido = 1;
     public int price = 1000;
@@ -65,12 +66,19 @@ public class FactoryInGameStage extends MyStage {
         //Actorok\\
 
         //Labelek\\
-        pointCounter = new MyLabel(game, "Life: ", new PointCounter(game));
+        pointCounter = new MyLabel(game, "" + getPoints(), new PointCounter(game));
         addActor(pointCounter);
         pointCounter.setFontScale(0.3f);
         pointCounter.setPositionCenter(80);
         pointCounter.setFontScale(0.3f);
         pointCounter.setAlignment(2);
+
+        productCounter = new MyLabel(game, "" + getProducts(), new ProductCounter(game));
+        addActor(productCounter);
+        productCounter.setFontScale(0.3f);
+        productCounter.setPositionCenter(70);
+        productCounter.setFontScale(0.3f);
+        productCounter.setAlignment(2);
 
 
         //Labelek\\
@@ -80,8 +88,10 @@ public class FactoryInGameStage extends MyStage {
                 @Override
                 public void onTick(Timer sender, float correction) {
                     super.onTick(sender, correction);
+                    productCounter.setText("Money:" + getPoints() );
                     if (pointupgraded == false) {
                         setPoints(getPoints() + 60);
+
                     }
                     else{
                         setPoints(getPoints() + 120);
@@ -103,6 +113,19 @@ public class FactoryInGameStage extends MyStage {
             ));
 
         //Money timer\\
+        addTimer(new TickTimer(1, true, new TickTimerListener() {
+            @Override
+            public void onTick(Timer sender, float correction) {
+                super.onTick(sender, correction);
+                productCounter.setText("" + getProducts());
+            }
+        }
+
+        ));
+
+        //Lomi timer\\
+
+        //Lomi timer\\
         //Click listenerek\\
         buyButton.addListener(new ClickListener(){
             @Override
@@ -147,7 +170,12 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                    setProducts(getProducts() + 5);
+                if (getProducts() < 10) {
+                    setProducts(getProducts() + 1);
+                }
+                else if(getProducts() >= 10){
+                    System.out.println("Túl sokat lomiztál!");
+                }
             }
         });
 
