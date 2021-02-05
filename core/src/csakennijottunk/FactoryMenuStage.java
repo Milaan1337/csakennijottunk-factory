@@ -19,24 +19,24 @@ public class FactoryMenuStage extends MyStage {
         addBackButtonScreenBackByStackPopListener();
 
         startButton = new StartButton(game);
-        startButton.setPosition(20, 80 );
-        startButton.setSize(15, 15);
+        startButton.setPosition(24, 100 );
+        startButton.setSize(50, 50);
         addActor(startButton);
 
-        exitButton = new ExitButton(game);
-        exitButton.setPosition(20, 60);
-        exitButton.setSize(15, 15);
-        addActor(exitButton);
-
         creditButton = new CreditButton(game);
-        creditButton.setPosition(20, 40);
-        creditButton.setSize(15, 15);
+        creditButton.setPosition(24, 70);
+        creditButton.setSize(50, 50);
         addActor(creditButton);
 
         infoButton = new InfoButton(game);
-        infoButton.setPosition(20, 20);
-        infoButton.setSize(15, 15);
+        infoButton.setPosition(24, 40);
+        infoButton.setSize(50, 50);
         addActor(infoButton);
+
+        exitButton = new ExitButton(game);
+        exitButton.setPosition(24, 10);
+        exitButton.setSize(50, 50);
+        addActor(exitButton);
 
 
 
