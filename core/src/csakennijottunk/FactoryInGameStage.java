@@ -38,20 +38,23 @@ public class FactoryInGameStage extends MyStage {
     public FactoryInGameStage(MyGame game) {
         super(new ExtendViewport(90,160), game);
         //Actorok\\
-        setCameraResetToLeftBottomOfScreen();
+        setCameraResetToCenterOfScreen();
         FactoryActor factoryActor = new FactoryActor(game);
         //addActor(factoryActor);
         BuyButton buyButton = new BuyButton(game);
         addActor(buyButton);
+        buyButton.setPositionCenter(50);
         AdderUpgrade adderUpgrade = new AdderUpgrade(game);
         addActor(adderUpgrade);
+        PointAdderButton pointAdderButton = new PointAdderButton(game);
+        addActor(pointAdderButton);
         //Actorok\\
 
         //Labelek\\
         pointCounter = new MyLabel(game, "Life: ", new PointCounter(game));
         addActor(pointCounter);
         pointCounter.setFontScale(0.3f);
-        pointCounter.setPositionCenter(-25);
+        pointCounter.setPositionCenter(80);
         pointCounter.setFontScale(0.3f);
         pointCounter.setAlignment(2);
         //Labelek\\
@@ -114,6 +117,19 @@ public class FactoryInGameStage extends MyStage {
                 }
             }
         });
+
+
+        pointAdderButton.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                setPoints(getPoints() + 5);
+            }
+        });
+
+
+
+        //Click listener\\
 
 
 
