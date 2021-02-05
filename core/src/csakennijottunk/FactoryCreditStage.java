@@ -17,6 +17,7 @@ public class FactoryCreditStage extends MyStage {
             backButton = new BackButton(game);
             backButton.setPosition(0, 0);
             backButton.setSize(15, 15);
+            addActor(backButton);
 
         }
     }

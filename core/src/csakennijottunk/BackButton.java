@@ -15,7 +15,6 @@ public class BackButton extends OneSpriteStaticActor {
                     @Override
                     public void clicked(InputEvent event, float x, float y) {
                         super.clicked(event, x, y);
-                        game.getMyAssetManager().getSound("").play();
                         game.setScreenBackByStackPop();
                     }
                 }
