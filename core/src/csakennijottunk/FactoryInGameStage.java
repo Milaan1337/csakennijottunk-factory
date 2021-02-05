@@ -52,7 +52,11 @@ public class FactoryInGameStage extends MyStage {
         FactoryActor factoryActor = new FactoryActor(game);
         //addActor(factoryActor);
         BuyButton buyButton = new BuyButton(game);
+        BuyButton2 buyButton2 = new BuyButton2(game);
+        buyButton2.setPositionCenter(50);
         buyButton.setPositionCenter(50);
+        BuyButton3 buyButton3 = new BuyButton3(game);
+        buyButton3.setPositionCenter(50);
         AdderUpgrade adderUpgrade = new AdderUpgrade(game);
         PointAdderButton pointAdderButton = new PointAdderButton(game);
         addActor(pointAdderButton);
@@ -66,6 +70,10 @@ public class FactoryInGameStage extends MyStage {
         FactoryWarehouse factoryWarehouse = new FactoryWarehouse(game);
         addActor(factoryWarehouse);
         factoryWarehouse.setPositionCenter(50);
+        FactoryActor2 factoryActor2 = new FactoryActor2(game);
+        factoryActor2.setPositionCenter(90);
+        FactoryActor3 factoryActor3 = new FactoryActor3(game);
+        factoryActor3. setPositionCenter(150);
         CoinIcon coinIcon = new CoinIcon(game);
         addActor(coinIcon);
         coinIcon.setY(100);
@@ -170,6 +178,46 @@ public class FactoryInGameStage extends MyStage {
                 }
             });
 
+        buyButton2.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                if (factories == 1) {
+
+                    if (getPoints() >= price) {
+                        setPoints(getPoints() - price);
+                        addActor(factoryActor2);
+                        factories = factories + 1;
+                        buyButton2.remove();
+                        System.out.println(factories);
+
+                    } else {
+                        System.out.println("Nincs elég pénz");
+                    }
+                }
+            }
+        });
+
+        buyButton3.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+                if (factories == 2) {
+
+                    if (getPoints() >= price) {
+                        setPoints(getPoints() - price);
+                        addActor(factoryActor3);
+                        factories = factories + 1;
+                        buyButton3.remove();
+                        System.out.println(factories);
+
+                    } else {
+                        System.out.println("Nincs elég pénz");
+                    }
+                }
+            }
+        });
+
         adderUpgrade.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x, float y) {
@@ -209,6 +257,10 @@ public class FactoryInGameStage extends MyStage {
                 super.clicked(event, x, y);
                 if (factories == 0) {
                     addActor(buyButton);
+                }
+
+                if (factories == 1) {
+                    addActor(buyButton2);
                 }
                 if (pointupgraded ==false) {
                     addActor(adderUpgrade);
