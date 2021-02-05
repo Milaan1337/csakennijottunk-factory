@@ -2,6 +2,7 @@ package csakennijottunk;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
@@ -17,6 +18,7 @@ import hu.csanyzeg.master.MyBaseClasses.Timers.Timer;
 import hu.csanyzeg.master.MyBaseClasses.UI.MyLabel;
 
 public class FactoryInGameStage extends MyStage {
+
     ClickListener c1;
     public float time = 0;
     MyLabel pointCounter;
@@ -297,18 +299,43 @@ public class FactoryInGameStage extends MyStage {
                 shopBackground.setZIndex(90);
 
                 if (factories == 0) {
+
+                    Label.LabelStyle labelStyle = new Label.LabelStyle();
+                    labelStyle.font = game.getMyAssetManager().getFont("Factory/font-factory.ttf");
+
+                    MyLabel label = new MyLabel(game, "1000", labelStyle);
+                    label.setFontScale(0.2f);
+                    label.setPosition(35, 85);
+                    addActor(label);
+                    label.setZIndex(90);
                     addActor(buyButton);
+
+
                     buyButton.setZIndex(94);
                 }
 
                 if (factories == 1) {
                     addActor(buyButton2);
+                    Label.LabelStyle labelStyle = new Label.LabelStyle();
+                    labelStyle.font = game.getMyAssetManager().getFont("Factory/font-factory.ttf");
+
+                    MyLabel label = new MyLabel(game, "3000:", labelStyle);
+                    label.setFontScale(0.2f);
+                    label.setPosition(20, 135);
+                    addActor(label);
                     buyButton2.setZIndex(95);
                 }
 
                 if (factories == 2) {
                     addActor(buyButton3);
-                    buyButton.setZIndex(92);
+                    Label.LabelStyle labelStyle = new Label.LabelStyle();
+                    labelStyle.font = game.getMyAssetManager().getFont("Factory/font-factory.ttf");
+
+                    MyLabel label = new MyLabel(game, "6000:", labelStyle);
+                    label.setFontScale(0.2f);
+                    label.setPosition(10, 120);
+                    addActor(label);
+                    buyButton.setZIndex(94);
                 }
                 if (pointupgraded ==false) {
                     addActor(adderUpgrade);
@@ -330,6 +357,8 @@ public class FactoryInGameStage extends MyStage {
                 shopExit.remove();
                 addActor(factoryShop);
                 shopBackground.remove();
+
+
             }
         });
 
