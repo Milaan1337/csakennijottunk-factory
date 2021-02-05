@@ -12,6 +12,7 @@ public class FactoryMenuScreen extends MyScreen {
     @Override
     protected void afterAssetsLoaded() {
         addStage(new FactoryMenuStage(game),0,true);
+        ((FactoryGame)game).setMusic(FactoryGame.MusicType.GAME);
     }
 
     @Override
