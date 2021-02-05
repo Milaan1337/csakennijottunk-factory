@@ -10,7 +10,7 @@ import hu.csanyzeg.master.MyBaseClasses.UI.MyLabel;
 
 public class TimerLabel extends MyLabel {
     public TimerLabel(MyGame game, CharSequence text) {
-        super(game, "", new LabelStyle(game.getMyAssetManager().getFont("Factory/font-factory.ttf"), Color.BROWN)  );
+        super(game, text, new LabelStyle(game.getMyAssetManager().getFont("Factory/font-factory.ttf"), Color.BROWN)  );
         addTimer(new OneTickTimer(2f, new OneTickTimerListener(){
             @Override
             public void onTick(OneTickTimer sender, float correction) {
