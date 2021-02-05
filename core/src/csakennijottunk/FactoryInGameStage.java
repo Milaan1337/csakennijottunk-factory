@@ -128,7 +128,8 @@ public class FactoryInGameStage extends MyStage {
         MyLabel timerLabel = new TimerLabel(game,"100 gold");
         addActor(timerLabel);
         timerLabel.setFontScale(0.3f);
-        timerLabel.setPosition(0,0);
+        timerLabel.setPosition(10,10);
+        timerLabel.setSize(50,17);
         timerLabel.setAlignment(2);
 
 
