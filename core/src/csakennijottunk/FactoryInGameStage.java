@@ -66,6 +66,10 @@ public class FactoryInGameStage extends MyStage {
         FactoryWarehouse factoryWarehouse = new FactoryWarehouse(game);
         addActor(factoryWarehouse);
         factoryWarehouse.setPositionCenter(50);
+        CoinIcon coinIcon = new CoinIcon(game);
+        addActor(coinIcon);
+        coinIcon.setY(100);
+        coinIcon.setX(0);
         //Actorok\\
 
         //Labelek\\
