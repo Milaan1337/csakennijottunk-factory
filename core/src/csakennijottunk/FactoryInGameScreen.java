@@ -12,6 +12,7 @@ public class FactoryInGameScreen extends MyScreen {
     @Override
     protected void afterAssetsLoaded() {
         addStage(new FactoryInGameStage(game),1,true);
+        ((FactoryGame)game).setMusic(FactoryGame.MusicType.MAIN);
     }
 
     @Override
