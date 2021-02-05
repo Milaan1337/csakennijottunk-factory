@@ -12,6 +12,9 @@ import hu.csanyzeg.master.MyBaseClasses.Timers.OneTickTimer;
 import hu.csanyzeg.master.MyBaseClasses.Timers.OneTickTimerListener;
 import hu.csanyzeg.master.MyBaseClasses.Timers.PermanentTimer;
 import hu.csanyzeg.master.MyBaseClasses.Timers.PermanentTimerListener;
+import hu.csanyzeg.master.MyBaseClasses.Timers.TickTimer;
+import hu.csanyzeg.master.MyBaseClasses.Timers.TickTimerListener;
+import hu.csanyzeg.master.MyBaseClasses.Timers.Timer;
 import hu.csanyzeg.master.MyBaseClasses.UI.MyLabel;
 
 public class FactoryInGameStage extends MyStage {
@@ -45,17 +48,28 @@ public class FactoryInGameStage extends MyStage {
         //Labelek\\
 
         //Money timer\\
-        addTimer(new MultiTickTimer(ido,9999999, new MultiTickTimerListener(){
+        addTimer(new TickTimer(1,true,new TickTimerListener(){
             @Override
-            public void onTick(MultiTickTimer sender, float correction, int count) {
-                super.onTick(sender, correction, count);
+            public void onTick(Timer sender, float correction) {
+                super.onTick(sender, correction);
                 setPoints(getPoints() + 60);
                 System.out.println(getPoints());
             }
+
+            @Override
+            public void onStop(Timer sender) {
+                super.onStop(sender);
+            }
+
+            @Override
+            public void onStart(Timer sender) {
+                super.onStart(sender);
+            }
         }
-        //Money timer\\
 
         ));
+        //Money timer\\
+
 
     }
 }
