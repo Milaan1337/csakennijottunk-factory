@@ -18,24 +18,27 @@ public class FactoryMenuStage extends MyStage {
         setCameraResetToCenterOfScreen();
         addBackButtonScreenBackByStackPopListener();
 
+        addActor(new MenuBackgroundActor(game, 0, 0));
+
+
         startButton = new StartButton(game);
-        startButton.setPosition(24, 100 );
-        startButton.setSize(50, 50);
+        startButton.setPosition(35, 93 );
+        startButton.setSize(25, 25);
         addActor(startButton);
 
         creditButton = new CreditButton(game);
-        creditButton.setPosition(24, 70);
-        creditButton.setSize(50, 50);
+        creditButton.setPosition(35, 78);
+        creditButton.setSize(25, 25);
         addActor(creditButton);
 
         infoButton = new InfoButton(game);
-        infoButton.setPosition(24, 40);
-        infoButton.setSize(50, 50);
+        infoButton.setPosition(35, 63);
+        infoButton.setSize(25, 25);
         addActor(infoButton);
 
         exitButton = new ExitButton(game);
-        exitButton.setPosition(24, 10);
-        exitButton.setSize(50, 50);
+        exitButton.setPosition(35, 48);
+        exitButton.setSize(25, 25);
         addActor(exitButton);
 
 

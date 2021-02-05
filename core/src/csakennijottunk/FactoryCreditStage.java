@@ -11,6 +11,7 @@ import hu.csanyzeg.master.MyBaseClasses.UI.MyLabel;
 public class FactoryCreditStage extends MyStage {
     BackButton backButton;
     ClickListener c1;
+
     public FactoryCreditStage(MyGame game) {
             super(new ExtendViewport(90, 160), game);
             addBackButtonScreenBackByStackPopListener();
