@@ -1,5 +1,6 @@
 package csakennijottunk;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
@@ -20,9 +21,10 @@ import hu.csanyzeg.master.MyBaseClasses.Timers.Timer;
 import hu.csanyzeg.master.MyBaseClasses.UI.MyLabel;
 
 public class FactoryInGameStage extends MyStage {
+    public float time = 0;
     MyLabel pointCounter;
     public int points = 0;
-    public float ido = 1f;
+    public int ido = 1;
     public int price = 1000;
     public int factories = 0;
     public int priceupgrade = 500;
@@ -137,7 +139,9 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                addActor(buyButton);
+                if (factories == 0) {
+                    addActor(buyButton);
+                }
                 addActor(adderUpgrade);
                 addActor(shopExit);
                 factoryShop.remove();
@@ -153,6 +157,29 @@ public class FactoryInGameStage extends MyStage {
                 adderUpgrade.remove();
                 shopExit.remove();
                 addActor(factoryShop);
+            }
+        });
+
+
+
+        factoryActor.addListener(new ClickListener() {
+            @Override
+            public void clicked(InputEvent event, float x, float y) {
+                super.clicked(event, x, y);
+               addTimer(new MultiTickTimer(1, 60, new MultiTickTimerListener(){
+                   @Override
+                   public void onTick(MultiTickTimer sender, float correction, int count) {
+                       super.onTick(sender, correction, count);
+                       time = time + 1;
+                       Gdx.app.log("FACTORY ACTOR", String.valueOf(60 - time));
+                   }
+
+                   @Override
+                   public void onStop(MultiTickTimer sender) {
+                       super.onStop(sender);
+
+                   }
+               }));
             }
         });
 
