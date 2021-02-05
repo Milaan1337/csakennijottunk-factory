@@ -123,11 +123,11 @@ public class FactoryInGameStage extends MyStage {
                     super.onTick(sender, correction);
                     productCounter.setText("Money:" + getPoints() );
                     if (pointupgraded == false) {
-                        setPoints(getPoints() + 60);
+                        setPoints(getPoints() + 6);
 
                     }
                     else{
-                        setPoints(getPoints() + 120);
+                        setPoints(getPoints() + 12);
                     }
                     System.out.println(getPoints());
                 }
@@ -202,8 +202,8 @@ public class FactoryInGameStage extends MyStage {
                 super.clicked(event, x, y);
                 if (factories == 1) {
 
-                    if (getPoints() >= price) {
-                        setPoints(getPoints() - price);
+                    if (getPoints() >= 3000) {
+                        setPoints(getPoints() - 3000);
                         addActor(factoryActor2);
                         factories = factories + 1;
                         buyButton2.remove();
@@ -222,8 +222,8 @@ public class FactoryInGameStage extends MyStage {
                 super.clicked(event, x, y);
                 if (factories == 2) {
 
-                    if (getPoints() >= price) {
-                        setPoints(getPoints() - price);
+                    if (getPoints() >= 6000) {
+                        setPoints(getPoints() - 6000);
                         addActor(factoryActor3);
                         factories = factories + 1;
                         buyButton3.remove();
@@ -275,22 +275,28 @@ public class FactoryInGameStage extends MyStage {
                 super.clicked(event, x, y);
 
                 addActor(shopBackground);
+                shopBackground.setZIndex(90);
 
                 if (factories == 0) {
                     addActor(buyButton);
+                    buyButton.setZIndex(94);
                 }
 
                 if (factories == 1) {
                     addActor(buyButton2);
+                    buyButton2.setZIndex(95);
                 }
 
                 if (factories == 2) {
                     addActor(buyButton3);
+                    buyButton.setZIndex(92);
                 }
                 if (pointupgraded ==false) {
                     addActor(adderUpgrade);
+                    adderUpgrade.setZIndex(96);
                 }
                 addActor(shopExit);
+                shopExit.setZIndex(91);
                 factoryShop.remove();
             }
         });
