@@ -262,6 +262,10 @@ public class FactoryInGameStage extends MyStage {
                 if (factories == 1) {
                     addActor(buyButton2);
                 }
+
+                if (factories == 2) {
+                    addActor(buyButton3);
+                }
                 if (pointupgraded ==false) {
                     addActor(adderUpgrade);
                 }
