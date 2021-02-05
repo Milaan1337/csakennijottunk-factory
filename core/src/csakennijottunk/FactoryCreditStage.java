@@ -14,6 +14,10 @@ public class FactoryCreditStage extends MyStage {
             addBackButtonScreenBackByStackPopListener();
             setCameraResetToCenterOfScreen();
 
+            backButton = new BackButton(game);
+            backButton.setPosition(0, 0);
+            backButton.setSize(15, 15);
+
         }
     }
 

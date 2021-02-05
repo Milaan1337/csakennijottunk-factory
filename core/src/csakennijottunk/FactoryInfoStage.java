@@ -13,5 +13,10 @@ public class FactoryInfoStage extends MyStage {
         super(new ExtendViewport(90, 160), game);
         setCameraResetToCenterOfScreen();
         addBackButtonScreenBackByStackPopListener();
+
+        backButton = new BackButton(game);
+        backButton.setSize(15, 15);
+        backButton.setPosition(0, 0);
+        addActor(backButton);
     }
 }
