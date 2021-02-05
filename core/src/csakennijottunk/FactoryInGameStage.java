@@ -5,6 +5,8 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 
+import java.sql.Time;
+
 import hu.csanyzeg.master.MyBaseClasses.Game.MyGame;
 import hu.csanyzeg.master.MyBaseClasses.Scene2D.MyStage;
 import hu.csanyzeg.master.MyBaseClasses.Timers.MultiTickTimer;
@@ -123,6 +125,13 @@ public class FactoryInGameStage extends MyStage {
         productCounter.setAlignment(2);
 
 
+        MyLabel timerLabel = new TimerLabel(game,"100 gold");
+        addActor(timerLabel);
+        timerLabel.setFontScale(0.3f);
+        timerLabel.setPosition(0,0);
+        timerLabel.setAlignment(2);
+
+
         //Labelek\\
 
         //Money timer\\
@@ -132,11 +141,11 @@ public class FactoryInGameStage extends MyStage {
                     super.onTick(sender, correction);
                     productCounter.setText("Money:" + getPoints() );
                     if (pointupgraded == false) {
-                        setPoints(getPoints() + 10000);
+                        setPoints(getPoints() + 30);
 
                     }
                     else{
-                        setPoints(getPoints() + 12);
+                        setPoints(getPoints() + 60);
                     }
                     System.out.println(getPoints());
                 }
@@ -330,9 +339,9 @@ public class FactoryInGameStage extends MyStage {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                    if (getProducts() >= 100){
-                        setProducts(getProducts() - 10);
-                        setPoints(getPoints() + 1000);
+                    if (getProducts() >= 1){
+                        setProducts(getProducts() - 1);
+                        setPoints(getPoints() + 10);
                     }
                     else{
                         System.out.println("Nincs még 100terméked!");
