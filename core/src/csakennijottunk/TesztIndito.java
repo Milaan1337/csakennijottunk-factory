@@ -12,9 +12,4 @@ public class TesztIndito extends FactoryGame {
         super.create();
         setScreen(new FactoryInGameScreen(this));
     }
-
-    @Override
-    public void setScreen(FactoryCreditStage factoryCreditStage) {
-
-    }
 }
