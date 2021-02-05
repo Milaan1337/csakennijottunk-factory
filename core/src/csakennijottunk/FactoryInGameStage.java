@@ -341,6 +341,8 @@ public class FactoryInGameStage extends MyStage {
                 super.clicked(event, x, y);
 
                 buyButton.remove();
+                buyButton2.remove();
+                buyButton3.remove();
                 adderUpgrade.remove();
                 shopExit.remove();
                 addActor(factoryShop);

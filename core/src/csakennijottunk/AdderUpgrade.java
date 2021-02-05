@@ -8,7 +8,7 @@ import hu.csanyzeg.master.MyBaseClasses.Scene2D.OneSpriteStaticActor;
 
 public class AdderUpgrade extends OneSpriteStaticActor {
     public AdderUpgrade(MyGame game){
-        super(game, "Factory/2xupgrade.jpg");
+        super(game, "Factory/2xupgrade.png");
         this.setSize(40,40);
 
     }
