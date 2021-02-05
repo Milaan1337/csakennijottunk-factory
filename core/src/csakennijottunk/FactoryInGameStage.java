@@ -12,8 +12,9 @@ import hu.csanyzeg.master.MyBaseClasses.Timers.PermanentTimer;
 import hu.csanyzeg.master.MyBaseClasses.Timers.PermanentTimerListener;
 
 public class FactoryInGameStage extends MyStage {
+    AdderUpgrade adderUpgrade;
     public int points = 0;
-
+    public float ido = 60f;
     public int getPoints(){
         return points;
     }
@@ -25,12 +26,14 @@ public class FactoryInGameStage extends MyStage {
     public FactoryInGameStage(MyGame game) {
         super(new ExtendViewport(90,160), game);
 
-        addTimer(new MultiTickTimer(60f,9999999, new MultiTickTimerListener(){
+        addTimer(new MultiTickTimer(ido,9999999, new MultiTickTimerListener(){
             @Override
             public void onTick(MultiTickTimer sender, float correction, int count) {
                 super.onTick(sender, correction, count);
                 setPoints(getPoints() + 60);
                 System.out.println(getPoints());
+
+                addActor(new AdderUpgrade(game));
             }
         }
 
