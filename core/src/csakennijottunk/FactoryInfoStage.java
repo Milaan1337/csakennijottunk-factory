@@ -90,6 +90,26 @@ public class FactoryInfoStage extends MyStage {
         label.setPosition(5, 55);
         addActor(label);
 
+        label = new MyLabel(game, "first Factory 500", labelStyle);
+        label.setFontScale(0.15f);
+        label.setPosition(5, 50);
+        addActor(label);
+
+        label = new MyLabel(game, "second Factory 1500", labelStyle);
+        label.setFontScale(0.15f);
+        label.setPosition(5, 45);
+        addActor(label);
+
+        label = new MyLabel(game, "third Factory 3000", labelStyle);
+        label.setFontScale(0.15f);
+        label.setPosition(5, 40);
+        addActor(label);
+
+        label = new MyLabel(game, "coin doubler 100", labelStyle);
+        label.setFontScale(0.15f);
+        label.setPosition(5, 35);
+        addActor(label);
+
         backButton = new BackButton(game);
         backButton.setSize(30, 30);
         backButton.setPosition(0, 0);
